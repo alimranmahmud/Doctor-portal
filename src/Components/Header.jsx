@@ -2,24 +2,42 @@ import React from 'react';
 import { Link } from 'react-router';
 
 const Header = () => {
+    const link = <>
+       <Link className='ml-10' to='/'>Home</Link>
+      <Link className='ml-10' to='/about'>About</Link>
+      <Link className='ml-10' to='/appointment'>Appointment</Link>
+      <Link className='ml-10' to='/reviews'>Reviews</Link>
+      <Link className='ml-10' to='/contactUs'>Contact Us</Link>
+      <Link className='ml-10' to='/login'>Login</Link>
+    </>
     return (
-   <div className="navbar bg-base-100 shadow-sm">
-  <div className="flex-1">
+
+
+<div className="navbar bg-base-100 shadow-sm">
+  <div className="navbar-start">
+    <div className="dropdown">
+      <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
+        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /> </svg>
+      </div>
+      <ul
+        tabIndex="-1"
+        className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
+        {link}
+      
+      
+      </ul>
+    </div>
     <a className="btn btn-ghost text-xl">Doctor Portal</a>
   </div>
-  <div className="flex-none">
-    <ul className="menu menu-horizontal flex gap-4 px-1">
-      <Link to='/'>Home</Link>
-      <Link to='/about'>About</Link>
-      <Link to='/appointment'>Appointment</Link>
-      <Link to='/reviews'>Reviews</Link>
-      <Link to='/contactUs'>Contact Us</Link>
-      <Link to='/login'>Login</Link>
-      
-   
+  <div className="navbar-center hidden lg:flex">
+    <ul className="menu menu-horizontal px-1">
+      {link}
     </ul>
   </div>
+
 </div>
+
+
     );
 };
 

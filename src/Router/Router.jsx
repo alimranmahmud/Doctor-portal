@@ -3,9 +3,9 @@ import MainLayOut from "../Layout/MainLayOut";
 import Home from "../Pages/Home/Home";
 import About from "../Components/About";
 import Appointment from "../Components/Appointment";
-import Review from "../Pages/Home/Review";
 import ContactUs from "../Components/ContactUs";
 import Login from "../Authentication/Login";
+import Reviews from "../Components/Reviews";
 
 export const router = createBrowserRouter([
     {
@@ -26,7 +26,7 @@ export const router = createBrowserRouter([
             },
             {
                 path:'/reviews',
-                Component: Review
+                Component: Reviews
             },
             {
                 path:'/contactUs',
