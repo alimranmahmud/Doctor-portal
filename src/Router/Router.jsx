@@ -5,6 +5,7 @@ import About from "../Components/About";
 import Appointment from "../Components/Appointment";
 import ContactUs from "../Components/ContactUs";
 import Login from "../Authentication/Login";
+import Registration from "../Authentication/Registration";
 import Reviews from "../Components/Reviews";
 
 export const router = createBrowserRouter([
@@ -35,6 +36,10 @@ export const router = createBrowserRouter([
             {
                 path:'/login',
                 Component:Login
+            },
+            {
+                path:'/registration',
+                Component: Registration
             }
 
         ]
