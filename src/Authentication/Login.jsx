@@ -1,13 +1,52 @@
+
 import { Link } from "react-router";
+import { AuthContext } from "../Context/AuthContext";
+import { useContext } from "react";
+import { toast } from "react-toastify";
 
 
 const Login = () => {
+    const { signIn, googleLogin } = useContext(AuthContext);
 
 
 
-    const handleLogin = data => {
-        console.log(data);
-       
+
+    const handleLogin = (e) => {
+        e.preventDefault()
+        const email = e.target.email.value;
+        const password = e.target.password.value;
+        console.log(email, password)
+
+        signIn(email, password)
+            .then((userCredential) => {
+                // Signed in 
+                const user = userCredential.user;
+                console.log(user)
+                toast.success("Login Successfull")
+                // ...
+            })
+            .catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                console.log(errorCode, errorMessage)
+                toast.success("Login eror")
+            });
+
+
+    }
+
+    const handleGoogleLogIn = () => {
+        googleLogin()
+            .then((result) => {
+
+                const user = result.user;
+                console.log(user)
+                // ...
+            }).catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                console.log(errorCode, errorMessage)                // ...
+            });
     }
 
     return (
@@ -17,24 +56,24 @@ const Login = () => {
                 <form onSubmit={handleLogin}>
                     <div className="form-control w-full max-w-xs">
                         <label className="label"> <span className="label-text">Email</span></label>
-                        <input type="text"
-                         
+                        <input type="text" name="email"
+
                             className="input input-bordered w-full max-w-xs" />
-                       <p className='text-red-600'>error</p>
+                        <p className='text-red-600'>error</p>
                     </div>
-                     <div className="form-control w-full max-w-xs">
+                    <div className="form-control w-full max-w-xs">
                         <label className="label"> <span className="label-text">Password</span></label>
-                        <input type="text"
-                         
+                        <input type="text" name="password"
+
                             className="input input-bordered w-full max-w-xs" />
-                       <p className='text-red-600'>error</p>
+                        <p className='text-red-600'>error</p>
                     </div>
                     <input className='btn btn-accent w-full' value="Login" type="submit" />
-                  
+
                 </form>
                 <p>New to Doctors Portal <Link className='text-secondary' to="/registration">Create new Account</Link></p>
                 <div className="divider">OR</div>
-                <button className='btn btn-outline w-full'>CONTINUE WITH GOOGLE</button>
+                <button className='btn btn-outline w-full' onClick={handleGoogleLogIn}>CONTINUE WITH GOOGLE</button>
             </div>
         </div>
     );

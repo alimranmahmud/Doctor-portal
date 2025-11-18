@@ -7,6 +7,8 @@ import ContactUs from "../Components/ContactUs";
 import Login from "../Authentication/Login";
 import Registration from "../Authentication/Registration";
 import Reviews from "../Components/Reviews";
+import Profile from "../Components/Profile";
+import BookAppointment from "../Components/BookAppointment";
 
 export const router = createBrowserRouter([
     {
@@ -15,31 +17,40 @@ export const router = createBrowserRouter([
         children: [
             {
                 index: true,
-                element:<Home></Home>
+                element: <Home></Home>
             },
             {
-                path:'/about',
+                path: '/about',
                 Component: About
             },
             {
-                path:'/appointment',
-                Component:Appointment
+                path: '/appointment',
+                loader:()=>fetch("/service.json"),
+                Component: Appointment
             },
             {
-                path:'/reviews',
+                path: '/reviews',
                 Component: Reviews
             },
             {
-                path:'/contactUs',
-                Component:ContactUs
+                path: '/contactUs',
+                Component: ContactUs
             },
             {
-                path:'/login',
-                Component:Login
+                path: '/profile',
+                Component: Profile
             },
             {
-                path:'/registration',
+                path: '/login',
+                Component: Login
+            },
+            {
+                path: '/registration',
                 Component: Registration
+            },
+            {
+                path:'/book_appointment',
+                element:BookAppointment
             }
 
         ]

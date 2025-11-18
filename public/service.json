@@ -1,0 +1,32 @@
+[
+    {
+      "id": 1,
+      "name": "Teeth Orthodontics",
+      "description": "Corrects misaligned teeth and jaws for a better smile and oral health."
+    },
+    {
+      "id": 2,
+      "name": "Cosmetic Dentistry",
+      "description": "Enhances the appearance of teeth through whitening, veneers, and other aesthetic procedures."
+    },
+    {
+      "id": 3,
+      "name": "Teeth Cleaning",
+      "description": "Professional cleaning to remove plaque, tartar, and maintain oral hygiene."
+    },
+    {
+      "id": 4,
+      "name": "Cavity Protection",
+      "description": "Preventive treatments to protect teeth from decay and cavities."
+    },
+    {
+      "id": 5,
+      "name": "Pediatric Dental",
+      "description": "Dental care specifically tailored for children."
+    },
+    {
+      "id": 6,
+      "name": "Oral Surgery",
+      "description": "Surgical procedures for complex dental issues such as extractions and implants."
+    }
+  ]

@@ -1,13 +1,31 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { motion } from "framer-motion";
-import { Link } from "react-router";
 {motion}
+import { Link } from "react-router-dom"; 
+import { AuthContext } from "../Context/AuthContext";
 
 export default function Register() {
+  const { createUser } = useContext(AuthContext);
   const [showPassword, setShowPassword] = useState(false);
 
+  const handleSignUp = (e) => {
+    e.preventDefault();
+    // const name = e.target.name.value;
+    const email = e.target.email.value;
+    const password = e.target.password.value;
+
+    createUser(email, password)
+      .then((userCredential) => {
+        const user = userCredential.user;
+        console.log(user);
+      })
+      .catch((error) => {
+        console.error(error.code, error.message);
+      });
+  };
+
   return (
-    <div className="min-h-screen bg-gray-100 flex items-center justify-center p-6">
+    <div className="min-h-screen text-black bg-gray-100 flex items-center justify-center p-6">
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
@@ -16,13 +34,13 @@ export default function Register() {
       >
         <h2 className="text-3xl font-bold text-center text-gray-800 mb-6">Create an Account</h2>
 
-        <form className="space-y-5">
-     
+        <form className="space-y-5" onSubmit={handleSignUp}>
           <div>
             <label className="block text-gray-700 font-medium mb-1">Full Name</label>
             <input
               type="text"
               placeholder="Enter your name"
+              name="name"
               className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:outline-none"
             />
           </div>
@@ -31,6 +49,7 @@ export default function Register() {
             <label className="block text-gray-700 font-medium mb-1">Email</label>
             <input
               type="email"
+              name="email"
               placeholder="Enter your email"
               className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:outline-none"
             />
@@ -41,6 +60,7 @@ export default function Register() {
             <div className="relative">
               <input
                 type={showPassword ? "text" : "password"}
+                name="password"
                 placeholder="Create a password"
                 className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:outline-none"
               />
@@ -54,7 +74,6 @@ export default function Register() {
             </div>
           </div>
 
-          
           <div>
             <label className="block text-gray-700 font-medium mb-1">Confirm Password</label>
             <input
@@ -65,6 +84,7 @@ export default function Register() {
           </div>
 
           <motion.button
+            type="submit" // <-- fixed
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="w-full bg-blue-600 text-white py-3 rounded-xl font-medium text-lg hover:bg-blue-700 transition-all"
@@ -73,10 +93,11 @@ export default function Register() {
           </motion.button>
         </form>
 
-
         <p className="text-center text-gray-600 mt-4">
           Already have an account?{' '}
-          <Link to='/login' className="text-blue-600 font-medium hover:underline">Login</Link>
+          <Link to="/login" className="text-blue-600 font-medium hover:underline">
+            Login
+          </Link>
         </p>
       </motion.div>
     </div>

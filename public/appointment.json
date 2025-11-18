@@ -1,0 +1,64 @@
+[
+  {
+    "id": 1,
+    "items": [
+      { "subId": 1, "title": "Braces Basic", "price": 120 },
+      { "subId": 2, "title": "Modern Aligners", "price": 200 },
+      { "subId": 3, "title": "Metal Braces", "price": 150 },
+      { "subId": 4, "title": "Retainer Package", "price": 90 },
+      { "subId": 5, "title": "Jaw Adjustment", "price": 300 }
+    ]
+  },
+  {
+    "id": 2,
+    "items": [
+      { "subId": 1, "title": "Teeth Whitening", "price": 80 },
+      { "subId": 2, "title": "Veneer Single", "price": 150 },
+      { "subId": 3, "title": "Full Veneer Set", "price": 650 },
+      { "subId": 4, "title": "Smile Design", "price": 500 },
+      { "subId": 5, "title": "Tooth Shaping", "price": 110 },
+      { "subId": 6, "title": "Bonding Repair", "price": 95 }
+    ]
+  },
+  {
+    "id": 3,
+    "items": [
+      { "subId": 1, "title": "Basic Cleaning", "price": 50 },
+      { "subId": 2, "title": "Deep Cleaning", "price": 120 },
+      { "subId": 3, "title": "Polishing", "price": 40 },
+      { "subId": 4, "title": "Scaling", "price": 70 },
+      { "subId": 5, "title": "Tartar Removal", "price": 60 }
+    ]
+  },
+  {
+    "id": 4,
+    "items": [
+      { "subId": 1, "title": "Fluoride Treatment", "price": 30 },
+      { "subId": 2, "title": "Sealant Coating", "price": 60 },
+      { "subId": 3, "title": "Cavity Filling", "price": 90 },
+      { "subId": 4, "title": "Enamel Strengthening", "price": 50 },
+      { "subId": 5, "title": "Decay Checkup", "price": 40 }
+    ]
+  },
+  {
+    "id": 5,
+    "items": [
+      { "subId": 1, "title": "Kids Cleaning", "price": 40 },
+      { "subId": 2, "title": "Kids Filling", "price": 70 },
+      { "subId": 3, "title": "Baby Tooth Checkup", "price": 30 },
+      { "subId": 4, "title": "Fluoride Kids", "price": 25 },
+      { "subId": 5, "title": "Children Braces", "price": 200 }
+    ]
+  },
+  {
+    "id": 6,
+    "items": [
+      { "subId": 1, "title": "Tooth Extraction", "price": 100 },
+      { "subId": 2, "title": "Wisdom Tooth Removal", "price": 180 },
+      { "subId": 3, "title": "Implant Placement", "price": 900 },
+      { "subId": 4, "title": "Bone Grafting", "price": 350 },
+      { "subId": 5, "title": "Gum Surgery", "price": 220 },
+      { "subId": 6, "title": "Biopsy", "price": 150 }
+    ]
+  }
+]
