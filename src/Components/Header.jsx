@@ -19,14 +19,18 @@ const Header = () => {
     <Link className='ml-10' to='/appointment'>Appointment</Link>
     <Link className='ml-10' to='/reviews'>Reviews</Link>
     <Link className='ml-10' to='/contactUs'>Contact Us</Link>
-<nav className="flex items-center">
-  {user?.email && <Link to="/profile" className="ml-10">Profile</Link>}
-  {user?.email ? (
-    <button onClick={handleLogOut} className="ml-10">Log out</button>
-  ) : (
-    <Link to="/login" className="ml-10">Login</Link>
-  )}
-</nav>
+    <nav className="flex items-center">
+      {user?.email && <Link to="/profile" className="ml-10">Profile</Link>}
+      {user?.email ? (
+        <button onClick={handleLogOut} className="ml-10">Log out</button>
+      ) : (
+        <Link to="/login" className="ml-10">Login</Link>
+      )}
+
+      {
+        user?.email && <Link className='ml-5' to='/history'>Archive</Link>
+      }
+    </nav>
   </>
   return (
 

@@ -1,4 +1,4 @@
-import { createBrowserRouter } from "react-router";
+import { createBrowserRouter } from "react-router-dom";
 import MainLayOut from "../Layout/MainLayOut";
 import Home from "../Pages/Home/Home";
 import About from "../Components/About";
@@ -9,50 +9,56 @@ import Registration from "../Authentication/Registration";
 import Reviews from "../Components/Reviews";
 import Profile from "../Components/Profile";
 import BookAppointment from "../Components/BookAppointment";
+import History from "../Components/History";
 
 export const router = createBrowserRouter([
-    {
-        path: '/',
-        Component: MainLayOut,
-        children: [
-            {
-                index: true,
-                element: <Home></Home>
-            },
-            {
-                path: '/about',
-                Component: About
-            },
-            {
-                path: '/appointment',
-                loader:()=>fetch("/service.json"),
-                Component: Appointment
-            },
-            {
-                path: '/reviews',
-                Component: Reviews
-            },
-            {
-                path: '/contactUs',
-                Component: ContactUs
-            },
-            {
-                path: '/profile',
-                Component: Profile
-            },
-            {
-                path: '/login',
-                Component: Login
-            },
-            {
-                path: '/registration',
-                Component: Registration
-            },
-            {
-                path:'/book_appointment',
-                element:BookAppointment
-            }
-
-        ]
-    }
-])
+  {
+    path: '/',
+    element: <MainLayOut />,
+    children: [
+      {
+        index: true,
+        element: <Home />
+      },
+      {
+        path: '/about',
+        element: <About />
+      },
+      {
+        path: '/appointment',
+        loader: () => fetch('/service.json'),
+        element: <Appointment />
+      },
+      {
+        path: '/reviews',
+        element: <Reviews />
+      },
+      {
+        path: '/contactUs',
+        element: <ContactUs />
+      },
+      {
+        path: '/profile',
+        element: <Profile />
+      },
+      {
+        path: '/login',
+        element: <Login />
+      },
+      {
+        path: '/registration',
+        element: <Registration />
+      },
+      {
+        path: '/service/:id',
+        loader:()=>fetch('/appointment.json'),
+        element: <BookAppointment />
+      },
+      {
+        path:'/history',
+        loader:()=>fetch('http://localhost:5000/users'),
+        element:<History/>
+      }
+    ]
+  }
+]);
