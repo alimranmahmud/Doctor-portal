@@ -7,7 +7,7 @@ const History = () => {
 const useData = useLoaderData();
 console.log(useData)
     return (
-        <div>
+        <div className="">
             {
                 useData.map(data=><HistoryData key={data._id} data={data}></HistoryData>)
             }

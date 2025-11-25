@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router";
 {motion}
 export default function About() {
   return (
@@ -95,7 +96,7 @@ export default function About() {
             whileTap={{ scale: 0.95 }}
             className="px-8 py-4 bg-blue-600 text-white rounded-xl text-lg font-medium hover:bg-blue-700 transition-all"
           >
-            Book an Appointment
+            <Link to='/appointment'>Book an Appointment</Link>
           </motion.button>
         </div>
       </motion.div>

@@ -1,11 +1,12 @@
 
-import { Link } from "react-router";
+import { Link, Navigate, useNavigate } from "react-router";
 import { AuthContext } from "../Context/AuthContext";
 import { useContext } from "react";
 import { toast } from "react-toastify";
 
 
 const Login = () => {
+    const navigate = useNavigate();
     const { signIn, googleLogin } = useContext(AuthContext);
 
 
@@ -23,13 +24,14 @@ const Login = () => {
                 const user = userCredential.user;
                 console.log(user)
                 toast.success("Login Successfull")
+                navigate('/')
                 // ...
             })
             .catch((error) => {
                 const errorCode = error.code;
                 const errorMessage = error.message;
                 console.log(errorCode, errorMessage)
-                toast.success("Login eror")
+                toast.error("Login error")
             });
 
 
@@ -41,11 +43,12 @@ const Login = () => {
 
                 const user = result.user;
                 console.log(user)
-                // ...
+                Navigate('/home')
+               
             }).catch((error) => {
                 const errorCode = error.code;
                 const errorMessage = error.message;
-                console.log(errorCode, errorMessage)                // ...
+                console.log(errorCode, errorMessage)  
             });
     }
 
@@ -59,14 +62,14 @@ const Login = () => {
                         <input type="text" name="email"
 
                             className="input input-bordered w-full max-w-xs" />
-                        <p className='text-red-600'>error</p>
+                        
                     </div>
                     <div className="form-control w-full max-w-xs">
                         <label className="label"> <span className="label-text">Password</span></label>
                         <input type="text" name="password"
 
                             className="input input-bordered w-full max-w-xs" />
-                        <p className='text-red-600'>error</p>
+                       
                     </div>
                     <input className='btn btn-accent w-full' value="Login" type="submit" />
 

@@ -16,8 +16,13 @@ const Header = () => {
   const link = <>
     <Link className='ml-10' to='/'>Home</Link>
     <Link className='ml-10' to='/about'>About</Link>
-    <Link className='ml-10' to='/appointment'>Appointment</Link>
-    <Link className='ml-10' to='/reviews'>Reviews</Link>
+    {
+      user?.email && <Link className='ml-10' to='/appointment'>Appointment</Link>
+    }
+    {
+      user?.email && <Link className='ml-10' to='/reviews'>Reviews</Link>
+    }
+    
     <Link className='ml-10' to='/contactUs'>Contact Us</Link>
     <nav className="flex items-center">
       {user?.email && <Link to="/profile" className="ml-10">Profile</Link>}

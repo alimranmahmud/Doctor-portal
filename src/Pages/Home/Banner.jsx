@@ -5,9 +5,9 @@ const Banner = () => {
             <div className="hero-content flex-col lg:flex-row-reverse">
                 <img src='chair.png' className="rounded-lg lg:w-1/2 shadow-2xl" alt='' />
                 <div>
-                    <h1 className="text-5xl font-bold">Box Office News!</h1>
-                    <p className="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
-                    <button>Getting Started</button>
+                    <h1 className="text-5xl font-bold">Smart Booking System</h1>
+                    <p className="py-6">The portal helps patients receive quick consultations and digital prescriptions. It also keeps medical records organized and easy to access.</p>
+                    <button className='btn'>Getting Started</button>
                 </div>
             </div>
         </div>

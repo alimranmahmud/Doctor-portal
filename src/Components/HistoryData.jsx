@@ -2,7 +2,7 @@ import React from 'react';
 
 const HistoryData = ({data}) => {
     return (
-        <div>
+        <div className='flex justify-between items-center gap-10'>
             
             <h3>Name: {data.name}</h3>
             <h4>Email: {data.email}</h4>

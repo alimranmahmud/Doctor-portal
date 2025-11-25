@@ -1,14 +1,15 @@
 import { useContext, useState } from "react";
 import { motion } from "framer-motion";
 {motion}
-import { Link } from "react-router-dom"; 
+import { Link, useNavigate } from "react-router-dom"; 
 import { AuthContext } from "../Context/AuthContext";
 
 export default function Register() {
   const { createUser } = useContext(AuthContext);
   const [showPassword, setShowPassword] = useState(false);
-
+  const navigate = useNavigate();
   const handleSignUp = (e) => {
+  
     e.preventDefault();
     // const name = e.target.name.value;
     const email = e.target.email.value;
@@ -18,6 +19,7 @@ export default function Register() {
       .then((userCredential) => {
         const user = userCredential.user;
         console.log(user);
+        navigate('/')
       })
       .catch((error) => {
         console.error(error.code, error.message);
